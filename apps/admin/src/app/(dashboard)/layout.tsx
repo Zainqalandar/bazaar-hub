@@ -1,10 +1,6 @@
 import type { ReactNode } from "react";
+import DashboardShell from "./DashboardShell";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
-  return (
-    <section>
-      <h2>Admin dashboard</h2>
-      {children}
-    </section>
-  );
+  return <DashboardShell>{children}</DashboardShell>;
 }
