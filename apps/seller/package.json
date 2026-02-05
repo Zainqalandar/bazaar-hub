@@ -9,12 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.17",
-    "@headlessui/react": "^2.2.9",
     "next": "16.1.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "rizzui": "^2.1.0"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@types/node": "^20",

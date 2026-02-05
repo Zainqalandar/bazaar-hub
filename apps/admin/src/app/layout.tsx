@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import "./globals.css";
 
 export const metadata = {
   title: "BazaarHub | Admin",
@@ -9,7 +8,15 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div style={{ padding: "24px", fontFamily: "ui-sans-serif" }}>
+          <header style={{ marginBottom: "24px" }}>
+            <h1 style={{ margin: 0 }}>BazaarHub Admin</h1>
+            <p style={{ margin: "8px 0 0" }}>Platform control and analytics</p>
+          </header>
+          <main>{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
