@@ -1,0 +1,195 @@
+openapi: 3.0.3
+info:
+  title: BazaarHub API
+  version: 0.1.0
+servers:
+  - url: http://localhost:4000/api
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user
+      tags: [Auth]
+      responses:
+        "201":
+          description: Created
+  /auth/login:
+    post:
+      summary: Login user
+      tags: [Auth]
+      responses:
+        "200":
+          description: OK
+  /auth/refresh:
+    post:
+      summary: Refresh access token
+      tags: [Auth]
+      responses:
+        "200":
+          description: OK
+  /auth/logout:
+    post:
+      summary: Logout user
+      tags: [Auth]
+      responses:
+        "200":
+          description: OK
+  /products:
+    get:
+      summary: List products
+      tags: [Products]
+      responses:
+        "200":
+          description: OK
+  /products/{id}:
+    get:
+      summary: Get product detail
+      tags: [Products]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /seller/products:
+    post:
+      summary: Create product (seller)
+      tags: [Products]
+      responses:
+        "201":
+          description: Created
+  /seller/products/{id}:
+    patch:
+      summary: Update product (seller)
+      tags: [Products]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+    delete:
+      summary: Delete product (seller)
+      tags: [Products]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: No Content
+  /cart:
+    get:
+      summary: Get cart
+      tags: [Cart]
+      responses:
+        "200":
+          description: OK
+  /cart/add:
+    post:
+      summary: Add item to cart
+      tags: [Cart]
+      responses:
+        "200":
+          description: OK
+  /cart/update:
+    patch:
+      summary: Update cart item
+      tags: [Cart]
+      responses:
+        "200":
+          description: OK
+  /cart/remove/{productId}:
+    delete:
+      summary: Remove item from cart
+      tags: [Cart]
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: No Content
+  /orders/checkout:
+    post:
+      summary: Checkout order
+      tags: [Orders]
+      responses:
+        "201":
+          description: Created
+  /orders/my:
+    get:
+      summary: Get my orders
+      tags: [Orders]
+      responses:
+        "200":
+          description: OK
+  /seller/orders:
+    get:
+      summary: Get seller orders
+      tags: [Orders]
+      responses:
+        "200":
+          description: OK
+  /seller/orders/{id}/status:
+    patch:
+      summary: Update order status (seller)
+      tags: [Orders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /admin/dashboard:
+    get:
+      summary: Admin dashboard analytics
+      tags: [Admin]
+      responses:
+        "200":
+          description: OK
+  /admin/sellers:
+    get:
+      summary: List sellers
+      tags: [Admin]
+      responses:
+        "200":
+          description: OK
+  /admin/sellers/{id}/approve:
+    patch:
+      summary: Approve seller
+      tags: [Admin]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+  /admin/users/{id}/block:
+    patch:
+      summary: Block or unblock user
+      tags: [Admin]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK

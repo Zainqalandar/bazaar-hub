@@ -1,13 +1,12 @@
-# BazaarHub 🛒
+# BazaarHub
 
-BazaarHub is a multi-vendor e-commerce platform built using the MREN stack
-(MongoDB, React, Express, Node.js).
+BazaarHub is a multi-vendor e-commerce platform with dedicated Customer, Seller, and Admin experiences.
 
 ## Features
 - Multi-role authentication (Customer, Seller, Admin)
-- Product & category management
-- Cart & order processing
-- Seller onboarding & approval
+- Product and category management
+- Cart and order processing
+- Seller onboarding and approval
 - Admin analytics dashboard
 
 ## Tech Stack
@@ -18,30 +17,32 @@ BazaarHub is a multi-vendor e-commerce platform built using the MREN stack
 - JWT Authentication
 
 ### Frontend
+- Next.js (App Router)
 - React
-- TailwindCSS
-- Redux Toolkit / React Query
+- TailwindCSS (planned)
+- Redux Toolkit / React Query (planned)
 
 ## Project Structure
-backend/
- ├── src/
- │   ├── modules/
- │   ├── middlewares/
- │   ├── routes/
- │   ├── models/
- │   └── utils/
-frontend/
- ├── customer-app/
- ├── seller-panel/
- └── admin-panel/
+```
+apps/
+  customer/     # Customer storefront (Next.js)
+  seller/       # Seller panel (Next.js)
+  admin/        # Admin panel (Next.js)
+backend/        # Express + Mongo API
+packages/
+  ui/           # Shared UI components
+  config/       # Shared eslint/tsconfig
+  api-client/   # Typed API client
+  types/        # Shared TypeScript types
+```
+## Docs
+- docs/NOTION.md
+- docs/OPENAPI_OUTLINE.md
+- docs/TASK_BOARD.md
+- backend/swagger/openapi.yaml
 
-## Setup
-1. Clone repo
-2. Install dependencies
-3. Setup .env
-4. Run backend & frontend
-
-## Contributors
-- Backend Lead
-- Frontend Developers
-# bazaar-hub
+## Setup (high level)
+1. Copy `.env.example` to `.env` and update values.
+2. Install dependencies for backend and apps.
+3. Run backend: `cd backend && npm run dev`
+4. Run frontend apps from their respective folders.
