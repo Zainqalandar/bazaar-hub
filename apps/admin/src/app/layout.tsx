@@ -9,14 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <div style={{ padding: "24px", fontFamily: "ui-sans-serif" }}>
-          <header style={{ marginBottom: "24px" }}>
-            <h1 style={{ margin: 0 }}>BazaarHub Admin</h1>
-            <p style={{ margin: "8px 0 0" }}>Platform control and analytics</p>
-          </header>
-          <main>{children}</main>
-        </div>
+      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+        {children}
       </body>
     </html>
   );

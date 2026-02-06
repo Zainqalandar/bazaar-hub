@@ -7,6 +7,9 @@
 /* Enable enhanced form styles */
 @plugin '@tailwindcss/forms';
 
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Define color palette using OKLCH color space */
 :root {
   /* Base Colors */

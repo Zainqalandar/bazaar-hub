@@ -1,4 +1,4 @@
-export default function AdminOrdersPage() {
+export default function SupportPage() {
   return (
     <section className="space-y-2">
       <div>
@@ -6,11 +6,11 @@ export default function AdminOrdersPage() {
           Operations
         </p>
         <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
-          Orders overview
+          Support
         </h3>
       </div>
       <p className="text-sm text-slate-600 dark:text-slate-300">
-        Track orders across the platform.
+        Track escalations, response SLAs, and marketplace issues.
       </p>
     </section>
   );
